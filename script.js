@@ -2,6 +2,7 @@ const navToggle = document.querySelector('.nav-toggle');
 const settingsToggle = document.querySelector('.settings-toggle');
 const addTask = document.querySelector('.add-task');
 const addProj = document.querySelector('.add-project');
+let projId = 1;
 
 
 navToggle.addEventListener('click', () => {
@@ -30,7 +31,6 @@ addTask.addEventListener('keypress', function(e) {
 
 addProj.addEventListener('click', () => {
     addNewProject();
-    
 });
 
 
@@ -50,5 +50,10 @@ function addNewTask(newTask) {
 }
 
 function addNewProject() {
+    const projectDash = document.querySelector('.project-dash');
+    const newProject = document.createElement('button');
 
+    newProject.textContent = `Project ${projId}`;
+    projectDash.appendChild(newProject);
+    projId++;
 }
