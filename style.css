@@ -10,6 +10,10 @@ header, .task-bar, .view-bar{
     justify-content: space-between;
 }
 
+.logo {
+    display: flex;
+}
+
 .nav-toggle {
     display: block;
     cursor: pointer;
