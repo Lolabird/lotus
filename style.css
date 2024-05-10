@@ -1,0 +1,27 @@
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+}
+
+header, .task-bar, .view-bar{
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-toggle {
+    display: block;
+    cursor: pointer;
+}
+
+.nav-bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px 0;
+}
+
+nav {
+    display: none;
+}
