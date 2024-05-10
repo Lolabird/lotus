@@ -47,8 +47,6 @@ function addNewTask(newTask) {
     span.textContent = newTask;
     taskItem.appendChild(span);
     taskList.appendChild(taskItem);
-    newTask.value = '';
-    //newTask.focus();
 }
 
 function addNewProject() {
