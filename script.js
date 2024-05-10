@@ -14,23 +14,43 @@ settingsToggle.addEventListener('click', () => {
     displayMenu(menu);
 });
 
-addTask.addEventListener('click', () => {
-    newTask();
+addTask.addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+        e.preventDefault();
+        task = this.value.trim();
+
+        if (task !== ''){
+            addNewTask(task);
+            this.value = '';
+        }
+        //add error message
+    }
+
 });
 
 addProj.addEventListener('click', () => {
-    newProject();
+    addNewProject();
+    
 });
 
 
 function displayMenu(menuClass) {
-    const newDisplay = menuClass.style.display === 'none' ? menuClass.style.display = 'block' : menuClass.style.display = 'none';
+    const newDisplay = menuClass.style.display === 'none' ? 
+        menuClass.style.display = 'block' : menuClass.style.display = 'none';
 }
 
-function newTask() {
+function addNewTask(newTask) {
+    const taskList = document.querySelector('.task-list');
+    const taskItem = document.createElement('li');
+    const span = document.createElement('span');
 
+    span.textContent = newTask;
+    taskItem.appendChild(span);
+    taskList.appendChild(taskItem);
+    newTask.value = '';
+    //newTask.focus();
 }
 
-function newProject() {
+function addNewProject() {
 
 }
