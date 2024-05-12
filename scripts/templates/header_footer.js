@@ -4,6 +4,10 @@ const nav = document.createElement('nav');
 const settingsMenu = document.createElement('div');
 const main = document.querySelector('main');
 
+let docTitle = document.title;
+let wordsInTitle = docTitle.split(' ');
+let title = wordsInTitle[0];
+
 header.innerHTML = `
     <div class="logo">
         <div><a href="#">Lotus</a></div>
@@ -13,7 +17,7 @@ header.innerHTML = `
             <div class="nav-bar"></div>
         </div>
     </div>
-    <input class="add-task" type="text" placeholder="Add Task">
+    <h1>${title}</h1>
     <button class="settings-toggle">User</button>
 `;
 
