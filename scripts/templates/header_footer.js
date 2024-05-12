@@ -17,7 +17,7 @@ header.innerHTML = `
     <button class="settings-toggle">User</button>
 `;
 
-nav.classList.add = 'main-menu';
+nav.classList.add('main-menu');
 nav.innerHTML = `
     <ul>
         <li><a href="#">Dashboard</a></li>
@@ -27,7 +27,7 @@ nav.innerHTML = `
     </ul>
 `;
 
-settingsMenu.classList.add = 'setting-menu';
+settingsMenu.classList.add('settings-menu');
 settingsMenu.innerHTML = `
     <ul>
         <li><a href="#">Profile</a></li>
