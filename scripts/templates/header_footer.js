@@ -4,10 +4,6 @@ const nav = document.createElement('nav');
 const settingsMenu = document.createElement('div');
 const main = document.querySelector('main');
 
-let docTitle = document.title;
-let wordsInTitle = docTitle.split(' ');
-let title = wordsInTitle[0];
-
 header.innerHTML = `
     <div class="logo">
         <div><a href="#">Lotus</a></div>
