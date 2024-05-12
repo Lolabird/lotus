@@ -7,29 +7,7 @@
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <div><a href="#">Lotus</a></div>
-            <div class="nav-toggle">
-                <div class="nav-bar"></div>
-                <div class="nav-bar"></div>
-                <div class="nav-bar"></div>
-            </div>
-        </div>
-        <input class="add-task" type="text" placeholder="Add Task">
-        <button class="settings-toggle">User</button>
-    </header>
-
-    <main>
-        <nav class="main-menu">
-            <ul>
-                <li><a href="#">Dashboard</a></li>
-                <li><a href="#">Tasks</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">Tags</a></li>
-            </ul>
-        </nav>
-        
+    <main>        
         <div class="content">
             <div class="dash">
                 <h3>Projects</h3>
@@ -40,6 +18,9 @@
 
             <div class="dash">
                 <h3>Tasks</h3>
+
+                <input class="add-task" type="text" placeholder="Add Task">
+
                 <div class="task-bar">
                     <input class="search-task" type="text" placeholder="Search Tasks">
                     <div class="project-check">
@@ -62,20 +43,9 @@
                 <div class="task-dash"><ul class="task-list"></ul></div>
             </div>
         </div>
-
-        <div class="settings-menu">
-            <ul>
-                <li><a href="#">Profile</a></li>
-                <li><a href="#">Users</a></li>
-                <li><a href="#">Groups</a></li>
-                <li><a href="#">Docs</a></li>
-                <li><a href="#">Help</a></li>
-                <li><a href="#">Settings</a></li>
-            </ul>
-        </div>
     </main>
 
-    <footer></footer>
+    <script src="scripts/templates/header_footer.js"></script>
     <script src="scripts/script.js"></script>
 </body>
 </html>

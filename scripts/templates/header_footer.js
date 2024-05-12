@@ -1,7 +1,8 @@
 const header = document.createElement('header');
 const footer = document.createElement('footer');
 const nav = document.createElement('nav');
-const settingsMenu = document.createElement('div')
+const settingsMenu = document.createElement('div');
+const main = document.querySelector('main');
 
 header.innerHTML = `
     <div class="logo">
@@ -12,6 +13,8 @@ header.innerHTML = `
             <div class="nav-bar"></div>
         </div>
     </div>
+    <input class="add-task" type="text" placeholder="Add Task">
+    <button class="settings-toggle">User</button>
 `;
 
 nav.classList.add = 'main-menu';
@@ -28,7 +31,7 @@ settingsMenu.classList.add = 'setting-menu';
 settingsMenu.innerHTML = `
     <ul>
         <li><a href="#">Profile</a></li>
-        <li><a href="#">Users</a></li>e
+        <li><a href="#">Users</a></li>
         <li><a href="#">Groups</a></li>
         <li><a href="#">Docs</a></li>
         <li><a href="#">Help</a></li>
@@ -36,4 +39,10 @@ settingsMenu.innerHTML = `
     </ul>
 `;
 
-footer.innerHTML = ``;
+footer.innerHTML = `This is the footer.`;
+
+document.body.insertBefore(header, document.body.firstChild);
+document.body.appendChild(footer);
+
+main.insertBefore(nav, main.firstChild);
+main.appendChild(settingsMenu);
