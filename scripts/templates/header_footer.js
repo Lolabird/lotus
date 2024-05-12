@@ -6,7 +6,7 @@ const main = document.querySelector('main');
 
 header.innerHTML = `
     <div class="logo">
-        <div><a href="#">Lotus</a></div>
+        <div><a href="index.html">Lotus</a></div>
         <div class="nav-toggle">
             <div class="nav-bar"></div>
             <div class="nav-bar"></div>
@@ -20,22 +20,22 @@ header.innerHTML = `
 nav.classList.add('main-menu');
 nav.innerHTML = `
     <ul>
-        <li><a href="#">Dashboard</a></li>
-        <li><a href="#">Tasks</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="#">Tags</a></li>
+        <li><a href="index.html">Dashboard</a></li>
+        <li><a href="tasks.html">Tasks</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="tags.html">Tags</a></li>
     </ul>
 `;
 
 settingsMenu.classList.add('settings-menu');
 settingsMenu.innerHTML = `
     <ul>
-        <li><a href="#">Profile</a></li>
-        <li><a href="#">Users</a></li>
-        <li><a href="#">Groups</a></li>
-        <li><a href="#">Docs</a></li>
-        <li><a href="#">Help</a></li>
-        <li><a href="#">Settings</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="users.html">Users</a></li>
+        <li><a href="groups.html">Groups</a></li>
+        <li><a href="docs.html">Docs</a></li>
+        <li><a href="help.html">Help</a></li>
+        <li><a href="settings.html">Settings</a></li>
     </ul>
 `;
 
