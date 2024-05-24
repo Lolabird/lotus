@@ -4,7 +4,7 @@ const addTask = document.querySelector('.add-task');
 addTask.addEventListener('keypress', function(e) {
     if (e.key === 'Enter') {
         e.preventDefault();
-        task = this.value.trim();
+        let task = this.value.trim();
 
         if (task !== ''){
             addNewTask(task);

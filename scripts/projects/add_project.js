@@ -3,26 +3,34 @@ const projectDash = document.querySelector('.project-dash');
 const projList = document.querySelector('.project-list');
 let projId = 1;
 
-addProj.addEventListener('click', () => {
-    addNewProject();
-    fetchProjects();
+addProj.addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+        e.preventDefault();
+        let project = this.value.trim();
+
+        if (project !== ''){
+            addNewProject(project);
+            fetchProjects();
+            this.value = '';
+        }
+        //add error message
+    }
 });
 
 
-function addNewProject() {
+function addNewProject(projectName) {
     fetch('/projects', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ name: `Project ${projId}` })
+        body: JSON.stringify({ name: `${projectName}` })
     })
     .then(response => {
         if (response.ok) {
-            console.log('Project created');
-            projId++;
+            console.log(`${projectName} created.`);
         } else {
-            console.error('Error creating project');
+            console.error(`Error creating ${projectName}.`);
         }
     })
     .catch(error => {
