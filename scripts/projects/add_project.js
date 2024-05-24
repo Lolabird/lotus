@@ -3,6 +3,10 @@ const projectDash = document.querySelector('.project-dash');
 const projList = document.querySelector('.project-list');
 let projId = 1;
 
+window.onload = function() {
+    fetchProjects();
+};
+
 addProj.addEventListener('keypress', function(e) {
     if (e.key === 'Enter') {
         e.preventDefault();
@@ -55,5 +59,3 @@ function fetchProjects() {
         console.error('Error:', error);
     });
 }
-
-window.addEventListener('DOMContentLoaded', fetchProjects);
