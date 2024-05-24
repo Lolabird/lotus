@@ -10,9 +10,6 @@ addProj.addEventListener('click', () => {
 
 
 function addNewProject() {
-    //newProject.textContent = `Project ${projId}`;
-
-    // Send a POST request to the server to create a new project
     fetch('/projects', {
         method: 'POST',
         headers: {
@@ -38,8 +35,8 @@ function fetchProjects() {
     fetch('/projects')
     .then(response => response.json())
     .then(projects => {
-        projList.innerHTML = ''; // Clear the project list
-        
+        projList.innerHTML = '';
+
         projects.forEach(project => {
             const newProject = document.createElement('button');
             newProject.textContent = project.name;
