@@ -39,6 +39,30 @@ app.post('/projects', express.json(), (req, res) => {
     });
   });
 
+  // API endpoint to create a new task
+app.post('/tasks', express.json(), (req, res) => {
+  const { name, project_id } = req.body;
+  db.run('INSERT INTO tasks (name, project_id) VALUES (?, ?)', [name, project_id], (err) => {
+    if (err) {
+      console.error(err);
+      res.status(500).send('Error creating task');
+    } else {
+      res.status(201).send('Task created');
+    }
+  });
+});
+
+// API endpoint to fetch all tasks
+app.get('/tasks', (req, res) => {
+  db.all('SELECT * FROM tasks', (err, rows) => {
+    if (err) {
+      console.error(err);
+      res.status(500).send('Error fetching tasks');
+    } else {
+      res.json(rows);
+    }
+  });
+});
 
 // Start the server
 app.listen(port, () => {

@@ -1,7 +1,6 @@
 const addProj = document.querySelector('.add-project');
 const projectDash = document.querySelector('.project-dash');
 const projList = document.querySelector('.project-list');
-let projId = 1;
 
 window.onload = function() {
     fetchProjects();

@@ -1,5 +1,10 @@
 const addTask = document.querySelector('.add-task');
+const taskList = document.querySelector('.task-list');
 
+
+window.onload = function() {
+    fetchProjects();
+};
 
 addTask.addEventListener('keypress', function(e) {
     if (e.key === 'Enter') {
@@ -7,7 +12,7 @@ addTask.addEventListener('keypress', function(e) {
         let task = this.value.trim();
 
         if (task !== ''){
-            addNewTask(task);
+            addNewTask(task, 1);
             this.value = '';
         }
         //add error message
@@ -16,12 +21,46 @@ addTask.addEventListener('keypress', function(e) {
 });
 
 
-function addNewTask(newTask) {
-    const taskList = document.querySelector('.task-list');
-    const taskItem = document.createElement('li');
-    const span = document.createElement('span');
+function addNewTask(taskName, projectId) {
+    fetch('/tasks', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ 
+            name: `${taskName}`, 
+            project_id: projectId
+        })
+    })
+    .then(response => {
+        if (response.ok) {
+            console.log(`${taskName} created.`);
+        } else {
+            console.error(`Error creating ${taskName}.`);
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+}
 
-    span.textContent = newTask;
-    taskItem.appendChild(span);
-    taskList.appendChild(taskItem);
+
+function fetchTasks() {
+    fetch('/tasks')
+    .then(response => response.json())
+    .then(projects => {
+        taskList.innerHTML = '';
+
+        tasks.forEach(task => {
+            const taskItem = document.createElement('li');
+            const span = document.createElement('span');
+
+            span.textContent = task.name;
+            taskItem.appendChild(span);
+            taskList.appendChild(taskItem);
+        });
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
 }
