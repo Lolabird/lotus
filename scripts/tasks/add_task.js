@@ -2,9 +2,8 @@ const addTask = document.querySelector('.add-task');
 const taskList = document.querySelector('.task-list');
 
 
-window.onload = function() {
-    fetchProjects();
-};
+fetchTasks();
+
 
 addTask.addEventListener('keypress', function(e) {
     if (e.key === 'Enter') {
@@ -13,6 +12,7 @@ addTask.addEventListener('keypress', function(e) {
 
         if (task !== ''){
             addNewTask(task, 1);
+            fetchTasks();
             this.value = '';
         }
         //add error message
@@ -48,7 +48,7 @@ function addNewTask(taskName, projectId) {
 function fetchTasks() {
     fetch('/tasks')
     .then(response => response.json())
-    .then(projects => {
+    .then(tasks => {
         taskList.innerHTML = '';
 
         tasks.forEach(task => {
