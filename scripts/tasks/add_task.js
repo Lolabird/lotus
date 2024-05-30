@@ -53,10 +53,11 @@ function fetchTasks() {
 
         tasks.forEach(task => {
             const taskItem = document.createElement('li');
-            const span = document.createElement('span');
-
-            span.textContent = task.name;
-            taskItem.appendChild(span);
+            
+            taskItem.innerHTML = `
+                <input type="checkbox" id="task${task.id}">
+                <label for="task${task.id}">${task.name}</label>
+            `
             taskList.appendChild(taskItem);
         });
     })
