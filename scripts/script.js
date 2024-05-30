@@ -25,3 +25,11 @@ if (title === 'Dashboard') {
     document.body.appendChild(addProjScript);
     document.body.appendChild(addTaskScript);
 }
+
+if (title === 'Projects') {
+    document.body.appendChild(addProjScript);
+}
+
+if (title === 'Tasks') {
+    document.body.appendChild(addTaskScript);
+}

@@ -7,7 +7,34 @@
 </head>
 <body>
     <main>
-        <h3>placeholder</h3>
+        <div class="content">
+            <div class="dash">
+                <h3>Tasks</h3>
+
+                <input class="add-task" type="text" placeholder="Add Task">
+
+                <div class="task-bar">
+                    <input class="search-task" type="text" placeholder="Search Tasks">
+                    <div class="project-check">
+                        <label for="view-all">View All</label>
+                        <input class="" type="checkbox" value="All" name="view-all">
+                    </div>
+                </div>
+
+                <div class="view-bar">
+                    <div class="views">
+                        <button>List</button>
+                        <button>Gantt</button>
+                        <button>Table</button>
+                        <button>Kanban</button>
+                        <button>Calendar</button>
+                    </div>
+                    <button>Filters</button>
+                </div>
+
+                <div class="task-dash"><ul class="task-list"></ul></div>
+            </div>
+        </div>
     </main>
 
     <script src="./scripts/script.js"></script>

@@ -56,7 +56,7 @@ function fetchTasks() {
             
             taskItem.innerHTML = `
                 <input type="checkbox" id="task${task.id}">
-                <label for="task${task.id}">${task.name}</label>
+                <label for="task${task.id}"><a href="#">${task.name}</a></label>
             `
             taskList.appendChild(taskItem);
         });
