@@ -9,7 +9,7 @@ db.serialize(() => {
   db.run(`
     CREATE TABLE IF NOT EXISTS projects (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
-      name TEXT NOT NULL,
+      name TEXT NOT NULL UNIQUE,
       is_public INTEGER CHECK (is_public IN (0, 1)),
       is_open INTEGER CHECK (is_open IN (0, 1)),
       is_archived INTEGER CHECK (is_archived IN (0, 1)),
